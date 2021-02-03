@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>FBS &mdash; Services </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+      body{
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+  
+    <div class="site-wrap">
+      <div class="site-section">
+        <div class="container">
+
+          <!-- My Header Part -->
+          <div class="row justify-content-center mb-2">
+            <div class="col-md-12">
+              <p class="text-center">
+                <strong><br/>
+                  <a href="index.html" class="text-danger">HOME</a> |
+                  <a href="aboutus.html" class="text-danger">ABOUT US</a> |
+                  <a href="services.html" class="text-danger">SERVICES</a> |
+                  <a href="signup.html" class="text-danger">SIGN UP</a> |
+                  <a href="contact.html" class="text-danger">CONTACT</a> |
+                  <a href="register.html" class="text-danger">REGISTER</a>
+                </strong>
+              </p>
+              <h2 class="font-weight-light text-black text-center"><strong style="font-weight:800;"> FAUSTINAH BUSINESS SOLUTIONS </strong></h2>
+              <h6 class="font-weight-light text-danger text-center" style="font-size:2.2rem;"><strong> Tinah Beauty Parlor </strong></h6>
+              <p class="text-center"> 
+                <br/> You are welcome expect the best from us. <br/>
+                This is a good saloon where they mind your beauty. <br/><br/>
+              </p>
+            </div>
+          </div>
+          <!-- My Header Part -->
+
+
+          <!-- Content Area -->
+          <hr/>
+          <h6 class="site-section-heading font-weight-light text-black text-center" style="font-size:1.5rem;"> 
+            you can look down to see some of our hair styles click one by one
+          </h6>
+          <div class="row justify-content-center mb-2">
+              <img class="mySlides img-fluid" src="images/ta.jpg" style="width:50%">
+              <img class="mySlides img-fluid" src="images/tb.jpg" style="width:50%"> 
+              <img class="mySlides img-fluid" src="images/tc.jpg" style="width:50%"> 
+              <img class="mySlides img-fluid" src="images/td.jpg" style="width:50%"> 
+              <img class="mySlides img-fluid" src="images/te.jpg" style="width:50%">
+              <img class="mySlides img-fluid" src="images/tf.jpg" style="width:50%">
+              <img class="mySlides img-fluid" src="images/tg.jpg" style="width:50%">
+              <img class="mySlides img-fluid" src="images/th.jpg" style="width:50%">
+              <img class="mySlides img-fluid" src="images/ti.jpg" style="width:50%">
+              <img class="mySlides img-fluid" src="images/tk.jpg" style="width:50%">
+          </div>
+          <div class="row justify-content-center mb-5">
+            <button class="btn btn-danger light-grey" onclick="plusDivs(-1)">❮ Prev</button> &nbsp;
+            <button class="btn btn-danger light-grey" onclick="plusDivs(1)">Next ❯</button>
+          </div>
+
+          <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function currentDiv(n) {
+              showDivs(slideIndex = n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("demo");
+              if (n > x.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" red", "");
+              }
+              x[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " red";
+            }
+          </script>
+          <!-- Content Area -->
+
+
+          <!-- My Footer -->
+          <div class="row justify-content-center mb-2">
+            <div class="col-md-12">
+              <h6 class="font-weight-light text-danger text-center" style="font-size:2.2rem;"><strong> Tinah Beauty Parlor </strong></h6>
+              <hr/><p class="text-center"> 
+                <br/> You are welcome to our saloon, feel at home <br/>
+                Here we mind your beauty because we believe that your beauty is your pride. <br/>
+              </p>
+              <p class="text-center">
+                <strong>
+                  <a href="register.html" class="btn btn-danger px-4 py-2 text-white" style="border-radius:25px;"> Register Now </a> <br/>
+                  <a href="index.html" class="text-danger">HOME</a> |
+                  <a href="aboutus.html" class="text-danger">ABOUT US</a> |
+                  <a href="services.html" class="text-danger">SERVICES</a> |
+                  <a href="signup.html" class="text-danger">SIGN UP</a> |
+                  <a href="contact.html" class="text-danger">CONTACT</a> |
+                  <a href="register.html" class="text-danger">REGISTER</a>
+                </strong>
+              </p>
+            </div>
+          </div>
+          <!-- My Footer -->
+
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
