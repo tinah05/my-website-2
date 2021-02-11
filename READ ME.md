@@ -8,7 +8,7 @@ Home page:
    this introduces you to our saloon and shows you different pages which  shows you different activities done here
    forexample the about us, services, signup, contact and signin.
 
-HOW TO USE OUR WEBSITE:
+INSTRUCTIONS ON HOW TO USE OUR WEBSITE:
 
 1. We have the about us page: 
    
