@@ -2,82 +2,72 @@
 session_start();
 
 // initializing variables
-$email    = "";
-$errors = array(); 
+$id ="";
+$email = "";
+$password    = "";
+$repeat_password ="";
+$remember_me = array(); 
 
 // connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'client');
+$client = mysqli_connect('localhost', 'root', '', '');
+
+//Create Table
+$create_table = "CREATE TABLE 'client' (
+  'id' int(11) NOT NULL AUTO_INCREMENT,
+  'email' varchar(100) NOT NULL,
+  'password' varchar(100) NOT NULL,
+  'repeat_password' varchar(100) NOT NULL,
+  PRIMARY KEY ('id')
+)"; //ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
+
+$client->exec($create_table);
+  echo "Clients table created successfully";
 
 
-
-
-// REGISTER USER
-if (isset($_POST['reg_user'])) {
+// signup USER
+if (isset($_POST['submit'])) {
   // receive all input values from the form
-  $email = mysqli_real_escape_string($db, $_POST['email']);
-  $password_1 = mysqli_real_escape_string($db, $_POST['password']);
-  $password_2 = mysqli_real_escape_string($db, $_POST['repeat_password']);
+  $id = mysqli_real_escape_string($client, $_POST['id']);
+  $email = mysqli_real_escape_string($client, $_POST['email']);
+  $password = mysqli_real_escape_string($client, $_POST['password']);
+  $repeat_password = mysqli_real_escape_string($client, $_POST['repeat password']);
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
+  if (empty($id)) { array_push($errors, "Username is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
-  if (empty($password_1)) { array_push($errors, "Password is required"); }
-  if ($password_1 != $password_2) {
-	array_push($errors, "Your two passwords do not match!");
+  if (empty($password)) { array_push($errors, "Password is required"); }
+  if ($password != $repeat_password) {
+	array_push($errors, "The two passwords do not match");
   }
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
-  $user_check_query = "SELECT * FROM client WHERE email='$email' LIMIT 1";
-  $result = mysqli_query($db, $user_check_query);
+  $user_check_query = "SELECT * FROM users WHERE username='$username' OR email='$email' LIMIT 1";
+  $result = mysqli_query($client, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
   if ($user) { // if user exists
+    if ($user['username'] === $username) {
+      array_push($errors, "Username already exists");
+    }
+
     if ($user['email'] === $email) {
-      array_push($errors, "The email already exists!");
+      array_push($errors, "email already exists");
     }
   }
 
-  // Finally, register user if there are no errors in the form
+  // Finally, signup user if there are no errors in the form
   if (count($errors) == 0) {
-  	$password = md5($password_1);//encrypt the password before saving in the database
+  	$password = md5($password);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO client (email, password, repeat_password)
-  			  VALUES('$email', '$password', '$password')";
-  	mysqli_query($db, $query);
-  	$_SESSION['email'] = $email;
-  	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.html');
+  	$query = "INSERT INTO users (id, email, password) 
+  			  VALUES('$id', '$email', '$password')";
+  	mysqli_query($client, $query);
+  	$_SESSION['id'] = $id;
+  	$_SESSION['success'] = "You are now signed up";
+  	header('location: web.php');
   }
 }
 
-
-
-
-// LOGIN USER
-if (isset($_POST['login_user'])) {
-  $email = mysqli_real_escape_string($db, $_POST['email']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
-
-  if (empty($email)) {
-  	array_push($errors, "Email is required");
-  }
-  if (empty($password)) {
-  	array_push($errors, "Password is required");
-  }
-
-  if (count($errors) == 0) {
-  	$password = md5($password);
-  	$query = "SELECT * FROM client WHERE email='$email' AND password='$password'";
-  	$results = mysqli_query($db, $query);
-  	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['email'] = $email;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.html');
-  	}else {
-  		array_push($errors, "Failed to login. Check your email or password!");
-  	}
-  }
-}
-
-?>
+// ... 
