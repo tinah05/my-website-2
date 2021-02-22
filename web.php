@@ -12,7 +12,7 @@ $remember_me = array();
 $client = mysqli_connect('localhost', 'root', '', '');
 
 //Create Table
-if($connection){
+if($client){
   echo"table is connected<br>";
 
 $create_table = "CREATE TABLE 'client' (
@@ -25,7 +25,7 @@ $create_table = "CREATE TABLE 'client' (
 
 $client->exec($create_table);
   echo "Clients table created successfully";
-  if(creat_table($connection)){
+  if(creat_table($client)){
     echo"created table";
   }else{
     echo"table already exists";
