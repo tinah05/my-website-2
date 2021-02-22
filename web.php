@@ -12,6 +12,9 @@ $remember_me = array();
 $client = mysqli_connect('localhost', 'root', '', '');
 
 //Create Table
+if($connection){
+  echo"table is connected<br>";
+
 $create_table = "CREATE TABLE 'client' (
   'id' int(11) NOT NULL AUTO_INCREMENT,
   'email' varchar(100) NOT NULL,
@@ -22,6 +25,15 @@ $create_table = "CREATE TABLE 'client' (
 
 $client->exec($create_table);
   echo "Clients table created successfully";
+  if(creat_table($connection)){
+    echo"created table";
+  }else{
+    echo"table already exists";
+  }
+ } else{
+    echo"error:table not connected";
+  }
+
 
 
 // signup USER
