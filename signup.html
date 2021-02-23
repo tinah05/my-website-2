@@ -1,3 +1,5 @@
+<?php include('web.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,9 +30,9 @@
                   <a href="index.html" class="text-danger">HOME</a> |
                   <a href="aboutus.html" class="text-danger">ABOUT US</a> |
                   <a href="services.html" class="text-danger">SERVICES</a> |
-                  <a href="signup.html" class="text-danger">SIGN UP</a> |
+                  <a href="signup.php" class="text-danger">SIGN UP</a> |
                   <a href="contact.html" class="text-danger">CONTACT</a> |
-                  <a href="signin.html" class="text-danger">SIGNIN</a>
+                  <a href="signin.php" class="text-danger">SIGNIN</a>
                 </strong>
               </p>
               <h2 class="font-weight-light text-black text-center"><strong style="font-weight:800;"> FAUSTINAH BUSINESS SOLUTIONS </strong></h2>
@@ -53,33 +55,34 @@
 
           <div class="row justify-content-center">
             <div class="col-md-7">
-              <form action="#" class="p-5 bg-white">
+              <form method="post" action="signup.php" class="p-5 bg-white">
+                <strong class="text-primary"> <?php include('errors.php'); ?> </strong>
 
                 <div class="row form-group">   
                   <div class="col-md-12">
                     <label class="text-black" for="email">Email</label> 
-                    <input type="email" id="email" class="form-control" placeholder="Enter Email" required>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required>
                   </div>
                 </div>
 
                 <div class="row form-group">  
                   <div class="col-md-12">
-                    <label class="text-black" for="subject">Password</label> 
-                    <input type="password" id="subject" class="form-control" placeholder="Enter Password" required>
+                    <label class="text-black" for="password">Password</label> 
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" required>
                   </div>
                 </div>
 
                 <div class="row form-group">  
                   <div class="col-md-12">
-                    <label class="text-black" for="subject">Repeat Password</label> 
-                    <input type="password" id="subject" class="form-control" placeholder="Repeat Password" required>
+                    <label class="text-black" for="repeat_password">Repeat Password</label> 
+                    <input type="password" id="repeat_password"name="repeat_password" class="form-control" placeholder="Repeat Password" required>
                   </div>
                 </div>
 
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label>
-                      <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me
+                      <input type="checkbox" style="margin-bottom:15px"> Remember me
                     </label>
                     <p> <em> When you creat an account with us you agree to our <a href="#" class="text-danger">Terms &amp; Privacy</a>. </em> </p>
                 
@@ -89,7 +92,7 @@
                 <div class="row form-group">
                   <div class="col-md-12">
                     <input type="button" value="Cancel" class="btn btn-outline-danger py-2 px-4">
-                    <input type="submit" value="Sign Up" class="btn btn-danger py-2 px-4 text-white">
+                    <input type="submit" name="reg_user" value="Sign Up" class="btn btn-danger py-2 px-4 text-white">
                   </div>
                 </div>
               </form>
@@ -112,9 +115,9 @@
                   <a href="index.html" class="text-danger">HOME</a> |
                   <a href="aboutus.html" class="text-danger">ABOUT US</a> |
                   <a href="services.html" class="text-danger">SERVICES</a> |
-                  <a href="signup.html" class="text-danger">SIGN UP</a> |
+                  <a href="signup.php" class="text-danger">SIGN UP</a> |
                   <a href="contact.html" class="text-danger">CONTACT</a> |
-                  <a href="signin.html" class="text-danger">SIGN IN</a>
+                  <a href="signin.php" class="text-danger">SIGN IN</a>
                 </strong>
               </p>
             </div>

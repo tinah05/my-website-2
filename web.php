@@ -10,10 +10,8 @@ $remember_me = array();
 
 // connect to the database
 $client = mysqli_connect('localhost', 'root', '', '');
+$select_client_table = mysql_query(connection,query);
 
-//Create Table
-if($client){
-  echo"table is connected<br>";
 
 $create_table = "CREATE TABLE 'client' (
   'id' int(11) NOT NULL AUTO_INCREMENT,
@@ -23,17 +21,15 @@ $create_table = "CREATE TABLE 'client' (
   PRIMARY KEY ('id')
 )"; //ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1
 
-$client->exec($create_table);
-  echo "Clients table created successfully";
-  if(creat_table($client)){
-    echo"created table";
-  }else{
-    echo"table already exists";
-  }
- } else{
-    echo"error:table not connected";
-  }
-
+//check DB connection Table
+if($client){
+  echo"DB connected successfully<br>";
+}elseif($select_client_table){
+  echo"table already exist";
+}else{
+  $client->exec($create_table);
+  echo"created table";
+}
 
 
 // signup USER
@@ -82,4 +78,4 @@ if (isset($_POST['submit'])) {
   }
 }
 
-// ... 
+?>

@@ -1,5 +1,3 @@
-<?php include('web.php') ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,7 +50,7 @@
           <div class="row justify-content-center">
             <div class="col-md-7">
               <form method="post" action="signin.php" class="p-5 bg-white">
-                <strong class="text-primary"> <?php include('errors.php'); ?> </strong>
+                <strong class="text-primary"> </strong>
 
                 <div class="row form-group">   
                   <div class="col-md-12">
@@ -97,7 +95,7 @@
               </p>
               <p class="text-center">
                 <strong>
-                  <a href="register.html" class="btn btn-danger px-4 py-2 text-white" style="border-radius:25px;"> Sign In Now </a> <br/>
+                  <a href="register.html" class="btn btn-danger px-4 py-2 text-white" style="border-radius:25px;"> signup Now </a> <br/>
                   <a href="index.html" class="text-danger">HOME</a> |
                   <a href="aboutus.html" class="text-danger">ABOUT US</a> |
                   <a href="services.html" class="text-danger">SERVICES</a> |
