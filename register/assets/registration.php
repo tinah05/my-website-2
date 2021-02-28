@@ -1,11 +1,11 @@
-
+<?php include('web.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<title>our contact</title>
+
+	<title>register with us here</title>
 	<link rel="favicon" href="assets/images/favicon.png">
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -29,8 +29,9 @@
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
 				<a class="navbar-brand" href="index.html">
 					<img src="assets/images/logo.png" alt="Techro HTML5 template"></a>
-
-			<!--/.nav-collapse -->
+			</div>
+			
+			
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right mainNav">
 					<li class="active"><a href="index.html">Home</a></li>
@@ -43,88 +44,72 @@
 
 				</ul>
 			</div>
-
-			
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</div>
-
-
-			
-			<!--/.nav-collapse -->
-		</div>
-	</div>
-	<!-- /.navbar -->
-
-		<header id="head" class="secondary">
-            <div class="container">
-                    <h1>Contact Us</h1>
-                    <p>you can send us amessage from in case you want to be informed about any thing in our school!</p>
-                </div>
-    </header>
-
-
-	<!-- container -->
+<!-- container -->
 	<div class="container">
 				<div class="row">
 					<div class="col-md-8">
-						<h3 class="section-title">Your Message</h3>
+						<h3 class="section-title">Register here</h3>
 						<p>
-						you can leave us amessage here thus if you want to reach to our teachers and there responsible subjects.
+						here you are free to register as astudent and after registration the you can have access to our subjects and teachers who are always ready for you at any one moment.
 						</p>
 						
-						<form class="form-light mt-20" role="form">
+						<form action="web.php" class="form-light mt-20" role="form">
+            <?php include('errors.php'); ?>
 							<div class="form-group">
-								<label>Name</label>
-								<input type="text" class="form-control" placeholder="Your name">
+								<label>First Name</label>
+								<input type="text" name="fname" class="form-control" placeholder="first name">
 							</div>
+							<div class="form-group">
+								<label>last Name</label>
+								<input type="text"  name="lname" class="form-control" placeholder="last name">
+							</div>
+							<div class="form-group">
+								<label>Gender</label>
+								<input type="text" name="gender" class="form-control" placeholder="female or male">
+							</div>
+							<div class="form-group">
+								<label>status</label>
+								<input type="text" name="status" class="form-control" placeholder="student or teacher or other">
+							</div>
+
+							
+						<div class="form-group">
+								<label>class</label>
+								<input type="text" name="class" class="form-control" placeholder="class">
+							</div>
+							
+							<div class="form-group">
+								<label>Subject</label>
+								<input type="text" name="subject" class="form-control" placeholder="Subject">
+							</div>
+
+
+
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Email</label>
-										<input type="email" class="form-control" placeholder="Email address">
+										<input type="email" name="email" class="form-control" placeholder="Email address">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Phone</label>
-										<input type="text" class="form-control" placeholder="Phone number">
+										<input type="text"name="phone" class="form-control" placeholder="Phone number">
 									</div>
 								</div>
 							</div>
-							<div class="form-group">
-								<label>Subject</label>
-								<input type="text" class="form-control" placeholder="Subject">
-							</div>
+							
 							<div class="form-group">
 								<label>Message</label>
-								<textarea class="form-control" id="message" placeholder="Write you message here..." style="height:100px;"></textarea>
+								<textarea class="form-control" name="massage" id="message" placeholder="Write you message here..." style="height:100px;"></textarea>
 							</div>
-							<button type="submit" class="btn btn-two">Send message</button><p><br/></p>
+							<button type="submit" name="submit" class="btn btn-two">submit</button><p><br/></p>
+						
+
 						</form>
 					</div>
-					<div class="col-md-4">
-						<div class="row">
-							<div class="col-md-6">
-								<h3 class="section-title">Office Address</h3>
-								<div class="contact-info">
-									<h5>Address</h5>
-									<p>lungujja lubaga, kampala uganda</p>
-									
-									<h5>Email</h5>
-									<p>nakitinah05@gmail.com</p>
-									
-									<h5>Phone</h5>
-									<p>+256 754 282953</p>
-								</div>
-							</div> 
-						</div> 						
-					</div>
-				</div>
-			</div>
-	<!-- /container -->
-
-	<footer id="footer">
+					<footer id="footer">
  
 		<div class="container">
    <div class="row">
@@ -274,3 +259,9 @@
 
 </body>
 </html>
+
+
+
+			
+		</body>
+		</html>

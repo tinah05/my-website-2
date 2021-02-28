@@ -59,7 +59,7 @@
 		<header id="head" class="secondary">
             <div class="container">
                     <h1>Contact Us</h1>
-                    <p>you can send us amessage from in case you want to be informed about any thing in our school!</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing eliras scele!</p>
                 </div>
     </header>
 
@@ -70,7 +70,7 @@
 					<div class="col-md-8">
 						<h3 class="section-title">Your Message</h3>
 						<p>
-						you can leave us amessage here thus if you want to reach to our teachers and there responsible subjects.
+						Lorem Ipsum is inting and typesetting in simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the is dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 						</p>
 						
 						<form class="form-light mt-20" role="form">

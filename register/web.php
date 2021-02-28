@@ -12,10 +12,10 @@ $subject ="";
 $email ="";
 $phone ="";
 $message ="";
-$errors = array();
+
 
 // connect to the database
-$student = mysqli_connect('localhost', 'root', '', 'students');
+$student = mysqli_connect('localhost', 'root', '', '');
 
 // REGISTER USER
 if (isset($_POST['user'])) {
@@ -64,7 +64,7 @@ if (isset($_POST['user'])) {
 
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
-  	$password = md5($password);//encrypt the password before saving in the database
+  	$password = ($password);//encrypt the password before saving in the database
 
   	$query = "INSERT INTO users  (id, email, fname,lname, gender, status, class, subjet, email, phone, message,)
   			  VALUES('$id', '$email', '$fname','$lname','$gender','$status','$class','$subject','$email','$phone','$message')";
@@ -91,7 +91,7 @@ if (isset($_POST['login_user'])) {
     }
   
     if (count($errors) == 0) {
-        $password = md5($password);
+        $password = ($password);
         $query = "SELECT * FROM users WHERE username='$email' AND password='$password'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
